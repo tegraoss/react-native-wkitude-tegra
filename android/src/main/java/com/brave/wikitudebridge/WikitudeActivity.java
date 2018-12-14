@@ -14,8 +14,9 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.media.AudioManager;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+// import android.support.v4.app.ActivityCompat;
+// import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -85,9 +86,6 @@ public class WikitudeActivity extends Activity {
         return features;
     }
 
-
-
-
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,7 +115,7 @@ public class WikitudeActivity extends Activity {
 
         this.setVolumeControlStream( AudioManager.STREAM_MUSIC );
         setContentView(R.layout.activity_wikitude);
-        this.setTitle("AR");
+        this.setTitle("Consulta de Produtos");
 
         // set AR-view for life-cycle notifications etc.
         this.architectView = (ArchitectView)this.findViewById( R.id.architectView );
@@ -161,53 +159,12 @@ public class WikitudeActivity extends Activity {
 
 
         if (this.hasGeolocation) {
-
-//
-//            // listener passed over to locationProvider, any location update is handled here
-//            this.locationListener = new LocationListener() {
-//
-//                @Override
-//                public void onStatusChanged( String provider, int status, Bundle extras ) {
-//                }
-//
-//                @Override
-//                public void onProviderEnabled( String provider ) {
-//                }
-//
-//                @Override
-//                public void onProviderDisabled( String provider ) {
-//                }
-//
-//                @Override
-//                public void onLocationChanged( final Location location ) {
-//                    // forward location updates fired by LocationProvider to architectView, you can set lat/lon from any location-strategy
-//                    if (location!=null) {
-//                        // sore last location as member, in case it is needed somewhere (in e.g. your adjusted project)
-//                        AbstractArchitectCamActivity.this.lastKnownLocaton = location;
-//                        if ( AbstractArchitectCamActivity.this.architectView != null ) {
-//                            // check if location has altitude at certain accuracy level & call right architect method (the one with altitude information)
-//                            if ( location.hasAltitude() && location.hasAccuracy() && location.getAccuracy()<7) {
-//                                AbstractArchitectCamActivity.this.architectView.setLocation( location.getLatitude(), location.getLongitude(), location.getAltitude(), location.getAccuracy() );
-//                            } else {
-//                                AbstractArchitectCamActivity.this.architectView.setLocation( location.getLatitude(), location.getLongitude(), location.hasAccuracy() ? location.getAccuracy() : 1000 );
-//                            }
-//                        }
-//                    }
-//                }
-//            };
-
-
-            this.locationListener = null;
+        this.locationListener = null;
 
         } else {
             this.locationListener = null;
         }
-
-
     }
-
-
-
 
     public ArchitectView.SensorAccuracyChangeListener getSensorAccuracyListener() {
         return new ArchitectView.SensorAccuracyChangeListener() {
@@ -322,7 +279,6 @@ public class WikitudeActivity extends Activity {
         return null;
     }
 
-
     //Lifecycle Methods:
 
     @Override
@@ -409,6 +365,4 @@ public class WikitudeActivity extends Activity {
             this.architectView.onLowMemory();
         }
     }
-
-
 }

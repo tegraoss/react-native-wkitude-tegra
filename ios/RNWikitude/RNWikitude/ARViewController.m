@@ -64,20 +64,41 @@
 
 //        Add the close button
         
-        self.button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.button addTarget:self
+//        self.button = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [self.button addTarget:self
+//                   action:@selector(closeARClicked)
+//         forControlEvents:UIControlEventTouchUpInside];
+//        [self.button setTitle:@"Exit AR" forState:UIControlStateNormal];
+//
+//        self.button.frame = CGRectMake(
+//                                  0,
+//                                  CGRectGetHeight(self.view.bounds) - 80.0,
+//                                  CGRectGetWidth(self.view.bounds),
+//                                  80.0);
+//        self.button.backgroundColor = [UIColor blackColor];
+//        self.button.tintColor = [UIColor whiteColor];
+//        [self.view addSubview:self.button];
+        
+        UIView* toolbar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 60)];
+        [toolbar setBackgroundColor:[UIColor orangeColor]];
+        [self.view addSubview:toolbar];
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, CGRectGetWidth(self.view.bounds), 60)];
+        label.text = @"Consulta de Produtos";
+        label.textAlignment = NSTextAlignmentCenter;
+        [label setTextColor:[UIColor blackColor]];
+        [label setBackgroundColor:[UIColor clearColor]];
+        [label setFont:[UIFont fontWithName: @"Roboto" size: 21.0f]];
+        [toolbar addSubview:label];
+        
+        UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(0, 10, 32, 60)];
+        [button addTarget:self
                    action:@selector(closeARClicked)
          forControlEvents:UIControlEventTouchUpInside];
-        [self.button setTitle:@"Exit AR" forState:UIControlStateNormal];
+         [button setImage:[UIImage imageNamed:@"left-arrow.png"] forState:UIControlStateNormal];
+        //[button setTitle:@"Voltar" forState:UIControlStateNormal];
+        [toolbar addSubview:button];
         
-        self.button.frame = CGRectMake(
-                                  0,
-                                  CGRectGetHeight(self.view.bounds) - 80.0,
-                                  CGRectGetWidth(self.view.bounds),
-                                  80.0);
-        self.button.backgroundColor = [UIColor blackColor];
-        self.button.tintColor = [UIColor whiteColor];
-        [self.view addSubview:self.button];
     }
     else {
         NSLog(@"This device is not supported. Show either an alert or use this class method even before presenting the view controller that manages the WTArchitectView. Error: %@", [deviceSupportError localizedDescription]);
