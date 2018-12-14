@@ -1,7 +1,7 @@
 {
-	"name": "react-native-wikitude",
-	"version": "2.0.4",
-	"description": "Bridge between Wikitude and React Native",
+	"name": "react-native-wikitude-tegra",
+	"version": "1.0.0",
+	"description": "Bridge between Wikitude and React Native for project Tegra",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
@@ -11,11 +11,12 @@
 		"AR",
 		"augmented reality",
 		"react native",
-		"react"
+		"react",
+		"Tegra"
 	],
-	"author": "brave-digital",
+	"author": "Tegra",
 	"license": "MIT",
-	"repository": "github:brave-digital/react-native-wikitude",
+	"repository": "github:/tegraoss/react-native-wkitude-tegra",
 	"dependencies": {
 		"npm": "^5.7.1"
 	}
