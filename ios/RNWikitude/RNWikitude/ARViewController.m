@@ -79,25 +79,27 @@
 //        self.button.tintColor = [UIColor whiteColor];
 //        [self.view addSubview:self.button];
         
-        UIView* toolbar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 60)];
-        [toolbar setBackgroundColor:[UIColor orangeColor]];
+        UIView* toolbar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 70)];
+        [toolbar setBackgroundColor:[UIColor colorWithRed:0.93 green:0.89 blue:0.86 alpha:1.0]];
+        
         [self.view addSubview:toolbar];
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, CGRectGetWidth(self.view.bounds), 60)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, CGRectGetWidth(self.view.bounds), 70)];
         label.text = @"Consulta de Produtos";
         label.textAlignment = NSTextAlignmentCenter;
         [label setTextColor:[UIColor blackColor]];
         [label setBackgroundColor:[UIColor clearColor]];
-        [label setFont:[UIFont fontWithName: @"Roboto" size: 21.0f]];
+        [label setFont:[UIFont fontWithName: @"System" size: 18.0f]];
+        [label setTextColor:[UIColor colorWithRed:0.58 green:0.58 blue:0.58 alpha:1.0]];
         [toolbar addSubview:label];
         
-        UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(0, 10, 32, 60)];
+        UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(0, 10, 70, 70)];
         [button addTarget:self
                    action:@selector(closeARClicked)
          forControlEvents:UIControlEventTouchUpInside];
+         //[button setCenter:toolbar.center];
          [button setImage:[UIImage imageNamed:@"left-arrow.png"] forState:UIControlStateNormal];
-        //[button setTitle:@"Voltar" forState:UIControlStateNormal];
-        [toolbar addSubview:button];
+         [toolbar addSubview:button];
         
     }
     else {
