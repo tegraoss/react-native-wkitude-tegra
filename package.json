@@ -1,22 +1,55 @@
 {
-	"name": "react-native-wikitude",
-	"version": "2.0.4",
-	"description": "Bridge between Wikitude and React Native",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"keywords": [
-		"wikitude",
-		"AR",
-		"augmented reality",
-		"react native",
-		"react"
-	],
-	"author": "brave-digital",
-	"license": "MIT",
-	"repository": "github:brave-digital/react-native-wikitude",
-	"dependencies": {
-		"npm": "^5.7.1"
-	}
+  "_from": "git+https://github.com/tegraoss/react-native-wkitude-tegra.git",
+  "_id": "react-native-wikitude@2.0.4",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/react-native-wikitude",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "react-native-wikitude@git+https://github.com/tegraoss/react-native-wkitude-tegra.git",
+    "name": "react-native-wikitude",
+    "escapedName": "react-native-wikitude",
+    "rawSpec": "git+https://github.com/tegraoss/react-native-wkitude-tegra.git",
+    "saveSpec": "git+https://github.com/tegraoss/react-native-wkitude-tegra.git",
+    "fetchSpec": "https://github.com/tegraoss/react-native-wkitude-tegra.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://github.com/tegraoss/react-native-wkitude-tegra.git#2e85860a9425a2d5392685ab6f775c6e7179d6d0",
+  "_spec": "react-native-wikitude@git+https://github.com/tegraoss/react-native-wkitude-tegra.git",
+  "_where": "/Users/patricksouza/Documents/Projects/assai-clientes-app",
+  "author": {
+    "name": "brave-digital"
+  },
+  "bugs": {
+    "url": "https://github.com/brave-digital/react-native-wikitude/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "npm": "^5.7.1"
+  },
+  "deprecated": false,
+  "description": "Bridge between Wikitude and React Native",
+  "homepage": "https://github.com/brave-digital/react-native-wikitude#readme",
+  "keywords": [
+    "wikitude",
+    "AR",
+    "augmented reality",
+    "react native",
+    "react"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "react-native-wikitude",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brave-digital/react-native-wikitude.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.0.4"
 }

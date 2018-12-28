@@ -80,7 +80,7 @@
 //        [self.view addSubview:self.button];
         
         UIView* toolbar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 70)];
-        [toolbar setBackgroundColor:[UIColor colorWithRed:0.93 green:0.89 blue:0.86 alpha:1.0]];
+        [toolbar setBackgroundColor:[UIColor colorWithRed:0.93 green:0.90 blue:0.86 alpha:1.1]];
         
         [self.view addSubview:toolbar];
         
@@ -89,8 +89,9 @@
         label.textAlignment = NSTextAlignmentCenter;
         [label setTextColor:[UIColor blackColor]];
         [label setBackgroundColor:[UIColor clearColor]];
-        [label setFont:[UIFont fontWithName: @"System" size: 18.0f]];
-        [label setTextColor:[UIColor colorWithRed:0.58 green:0.58 blue:0.58 alpha:1.0]];
+        [label setFont:[UIFont fontWithName: @"System" size: 17.0f]];
+        //[label setTextColor:[UIColor colorWithRed:0.81 green:0.80 blue:0.82 alpha:1.0]];
+        [label setTextColor:[UIColor colorWithRed:0.29 green:0.29 blue:0.29 alpha:1.0]];
         [toolbar addSubview:label];
         
         UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(0, 10, 70, 70)];
