@@ -16,6 +16,10 @@
 
 @property (nonatomic, strong) UIButton *button;
 
+@property(nonatomic, strong) UIView *toolbar;
+
+@property(nonatomic, strong) UILabel *label;
+
 @end
 
 @implementation ARViewController
@@ -61,47 +65,47 @@
         NSDictionary *views = NSDictionaryOfVariableBindings(_architectView);
         [self.view addConstraints: [NSLayoutConstraint constraintsWithVisualFormat:@"|[_architectView]|" options:0 metrics:nil views:views] ];
         [self.view addConstraints: [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_architectView]|" options:0 metrics:nil views:views] ];
-
-//        Add the close button
         
-//        self.button = [UIButton buttonWithType:UIButtonTypeCustom];
-//        [self.button addTarget:self
-//                   action:@selector(closeARClicked)
-//         forControlEvents:UIControlEventTouchUpInside];
-//        [self.button setTitle:@"Exit AR" forState:UIControlStateNormal];
-//
-//        self.button.frame = CGRectMake(
-//                                  0,
-//                                  CGRectGetHeight(self.view.bounds) - 80.0,
-//                                  CGRectGetWidth(self.view.bounds),
-//                                  80.0);
-//        self.button.backgroundColor = [UIColor blackColor];
-//        self.button.tintColor = [UIColor whiteColor];
-//        [self.view addSubview:self.button];
+        self.toolbar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 65)];
+        [self.toolbar setBackgroundColor:[UIColor colorWithRed:0.93 green:0.90 blue:0.86 alpha:1.1]];
         
-        UIView* toolbar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 70)];
-        [toolbar setBackgroundColor:[UIColor colorWithRed:0.93 green:0.90 blue:0.86 alpha:1.1]];
+        [self.view addSubview:self.toolbar];
         
-        [self.view addSubview:toolbar];
-        
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, CGRectGetWidth(self.view.bounds), 70)];
-        label.text = @"Consulta de Produtos";
-        label.textAlignment = NSTextAlignmentCenter;
-        [label setTextColor:[UIColor blackColor]];
-        [label setBackgroundColor:[UIColor clearColor]];
-        [label setFont:[UIFont fontWithName: @"System" size: 17.0f]];
+        self.label = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, CGRectGetWidth(self.view.bounds), 70)];
+        self.label.text = @"Consulta de Produtos";
+        self.label.textAlignment = NSTextAlignmentCenter;
+        [self.label setTextColor:[UIColor blackColor]];
+        [self.label setBackgroundColor:[UIColor clearColor]];
+        [self.label setFont:[UIFont fontWithName: @"System" size: 17.0f]];
         //[label setTextColor:[UIColor colorWithRed:0.81 green:0.80 blue:0.82 alpha:1.0]];
-        [label setTextColor:[UIColor colorWithRed:0.29 green:0.29 blue:0.29 alpha:1.0]];
-        [toolbar addSubview:label];
+        [self.label setTextColor:[UIColor colorWithRed:0.29 green:0.29 blue:0.29 alpha:1.0]];
+        [self.toolbar addSubview:self.label];
         
-        UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(0, 10, 70, 70)];
-        [button addTarget:self
-                   action:@selector(closeARClicked)
-         forControlEvents:UIControlEventTouchUpInside];
-         //[button setCenter:toolbar.center];
-         [button setImage:[UIImage imageNamed:@"left-arrow.png"] forState:UIControlStateNormal];
-         [toolbar addSubview:button];
+        self.button = [[UIButton alloc] initWithFrame:CGRectMake(0, 10, 70, 70)];
+        [self.button addTarget:self action:@selector(closeARClicked) forControlEvents:UIControlEventTouchUpInside];
+        [self.button setImage:[UIImage imageNamed:@"left-arrow.png"] forState:UIControlStateNormal];
+        [self.toolbar addSubview:self.button];
         
+        // ControlExperience
+        UIView *controlExperience = [[UIView alloc]initWithFrame:CGRectMake(CGRectGetWidth(self.view.bounds) - 240, 80, 230, 35)];
+        [controlExperience setBackgroundColor:[UIColor colorWithRed:1.00 green:1.00 blue:1.00 alpha:0.7]];
+        controlExperience.layer.cornerRadius = 15;
+        controlExperience.layer.masksToBounds = true;
+        [self.view addSubview:controlExperience];
+        
+        //Label switch
+        UILabel *lblSwitch = [[UILabel alloc]initWithFrame:CGRectMake(10, 3, 250, 30)];
+        lblSwitch.text = @"Ler Código de Barras";
+        lblSwitch.textColor = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha:0.7];
+        [lblSwitch setFont:[UIFont fontWithName:@"system" size:12.0f]];
+        
+        //Control experience
+        UISwitch *btnSwitch = [[UISwitch alloc]initWithFrame:CGRectMake(175, 2 , 50, 0)];
+        btnSwitch.on = true;
+        btnSwitch.onTintColor = [UIColor colorWithRed:0.95 green:0.60 blue:0.00 alpha:1.0];
+        [btnSwitch addTarget:self action:@selector(closeARClicked) forControlEvents:UIControlEventTouchUpInside];
+        [controlExperience addSubview:btnSwitch];
+        [controlExperience addSubview:lblSwitch];
     }
     else {
         NSLog(@"This device is not supported. Show either an alert or use this class method even before presenting the view controller that manages the WTArchitectView. Error: %@", [deviceSupportError localizedDescription]);
